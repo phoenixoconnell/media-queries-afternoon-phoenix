@@ -1,0 +1,22 @@
+header {
+    position: fixed;
+    top: 0px;
+    right: 0px;
+}
+
+.start-bootstrap {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    color: yellow;
+}
+
+#site-nav {
+    display: flex;
+}
+
+#site-nav li {
+    list-style: none;
+    color: white;
+    margin-right: 20px;
+}
