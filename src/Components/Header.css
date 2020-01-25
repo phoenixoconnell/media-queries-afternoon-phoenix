@@ -1,22 +1,202 @@
-header {
+@import url('https://fonts.googleapis.com/css?family=Kaushan+Script&display=swap');
+
+#header-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
     position: fixed;
     top: 0px;
     right: 0px;
+    height: 60px;
+    margin-bottom: 0px;
+    margin-top: 15px;
 }
 
 .start-bootstrap {
-    position: fixed;
-    top: 0px;
-    left: 0px;
-    color: yellow;
+    color: gold;
+    margin-right: 350px;
+    font-family: 'Kaushan Script', cursive;
+    font-size: 30px;
 }
 
 #site-nav {
     display: flex;
+    flex-direction: row;
 }
 
-#site-nav li {
+.menu-text {
     list-style: none;
     color: white;
     margin-right: 20px;
+}
+
+#site-nav-expand {
+    display: flex;
+    margin-top: 0px;
+    list-style: none;
+    color: white;
+    margin-right: 20px;
+    flex-direction: row;
+}
+
+#site-nav-contract {
+    display: flex;
+    flex-direction: row;
+}
+
+#hamburger-menu {
+    display: none;
+}
+
+.welcome-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    font-family: serif;
+}
+
+h3 {
+    font-size: 50px;
+    font-style: italic;
+}
+
+h2 {
+    font-size: 70px;
+    word-wrap: break-word;
+    font-family: sans-serif;
+}
+
+button {
+    background-color: gold;
+    border-radius: 5px;
+    border: 2px solid gold;
+    color: white;
+    font-size: larger;
+    font-weight: bold;
+    height: 80px;
+    width: 230px;
+}
+
+@media (max-width: 990px) {
+    #site-nav {
+        display: none;
+    }
+
+    #hamburger-menu {
+        display: block;
+        background-color: gold;
+        color: white;
+        padding: 10px;
+        border-radius: 5px;
+    }
+
+    .header {
+        background-color: #212529;
+        z-index: 99;
+    }
+
+    .start-bootstrap {
+        margin-right: 400px;
+    }
+
+    #site-nav {
+        position: fixed;
+        left: 0px;
+        top: 60px;
+        height: 0px;
+        /* height: 150px; */
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        background-color: #212529;
+        z-index: 2;
+        overflow: hidden;
+    }
+
+    #site-nav-expand {
+        animation-name: expand-menu;
+        animation-duration: 1s;
+        height: 150px;
+        position: fixed;
+        left: 0px;
+        top: 60px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        background-color: #212529;
+        z-index: 2;
+        overflow: hidden;
+    }
+
+    #site-nav-contract {
+        animation-name: contract-menu;
+        animation-duration: 1s;
+        height: 0px;
+        position: fixed;
+        left: 0px;
+        top: 60px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        background-color: #212529;
+        z-index: 2;
+        overflow: hidden;
+        list-style: none;
+        color: white;
+        margin-right: 20px;
+        margin-top: 0px;
+    }
+}
+
+@media (max-width: 767px) {
+    .start-bootstrap {
+        margin-right: 200px;
+    }
+
+    h3 {
+        font-size: 30px;
+    }
+    
+    h2 {
+        font-size: 50px;
+    }
+}
+
+@media (max-width: 480px) {
+    .start-bootstrap {
+        margin-right: 50px;
+    }
+}
+
+@keyframes expand-menu {
+    from {
+        height: 0px;
+    }
+
+    to {
+        height: 150px;
+    }
+}
+
+@keyframes contract-menu {
+    from {
+        height: 150px;
+    }
+
+    to {
+        height: 0px;
+    }
 }
